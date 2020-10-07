@@ -1,0 +1,29 @@
+# fcitx 
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
+fcitx &
+
+# picom
+picom -b
+
+# fonts set
+xset +fp /usr/share/fonts/TTF/           # Prepend a custom font path to Xorg's list of known font paths
+
+# set root name
+while true; do
+   bash /home/clay/dwm/dwm-6.2/scripts/system_status.sh 
+   sleep 2    # Update time every minute
+done &
+
+# set wallpapers
+while true; do
+  feh --recursive --randomize --bg-fill ~/Downloads/wallpapers
+  sleep 5m
+done &
+
+# dwm
+while true; do
+    dwm 2> ~/.dwm.log
+done
