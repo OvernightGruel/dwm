@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
+static const unsigned int borderpx  = 8;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
 static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
@@ -11,13 +11,13 @@ static const int smartgaps          = 1;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const int viewontag          = 1;     /* Switch view on tag switch */
-static const char *fonts[]          = { "MesloLGS NF:size=16" };
-static const char dmenufont[]       = "MesloLGS NF:size=16";
+static const char *fonts[]          = { "TerminessTTF Nerd Font:size=20" };
+static const char dmenufont[]       = "TerminessTTF Nerd Font:size=20";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#ffffff";
-static const char col_cyan[]        = "#73575c";
+static const char col_cyan[]        = "#6e8b74";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
@@ -33,7 +33,7 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -87,9 +87,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_k,      focusstackhid,  {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_j,      rotatestack,    {.i = +1 } },
 	{ MODKEY|ControlMask,           XK_k,      rotatestack,    {.i = -1 } },
-	{ ControlMask,                  XK_d,      spawn,          {.v = downvol } },
-	{ ControlMask,                  XK_m,      spawn,          {.v = mutevol } },
-	{ ControlMask,                  XK_u,      spawn,          {.v = upvol   } },
+	{ MODKEY|ControlMask,           XK_d,      spawn,          {.v = downvol } },
+	{ MODKEY|ControlMask,           XK_m,      spawn,          {.v = mutevol } },
+	{ MODKEY|ControlMask,           XK_u,      spawn,          {.v = upvol   } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },

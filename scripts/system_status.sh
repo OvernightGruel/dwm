@@ -18,6 +18,7 @@ hdfree=$(df -h /dev/nvme0n1p3 | awk ' /[0-9]/ {print $3 "/" $2}')
 
 memfree=$(free --mebi | sed -n '2{p;q}' | awk '{printf ("%2.2f%\n", (( $3 / $2 ) * 100))}')
 
-# cpu
+loadavg=$(cut -d " " -f 1,2,3 /proc/loadavg)
 
-xsetroot -name " ${memfree} | ${hdfree} | ${vol} | ${localtime} "
+xsetroot -name " ${loadavg} | ${memfree} | ${hdfree} | ${vol} | ${localtime} "
+
